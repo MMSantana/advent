@@ -1,6 +1,6 @@
 (ns clj.days.day-3)
 
-(def input (slurp "resources/inputs/day_3_corrupted.txt"))
+(def input (slurp "resources/inputs/day_3.txt"))
 
 (defn grab-multiplications
   [s]
