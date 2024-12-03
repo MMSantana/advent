@@ -1,4 +1,5 @@
-(ns clj.days.day-1)
+(ns clj.days.day-1
+  (:require [clj.util :as util]))
 
 (defn list-separator
   [pred]
@@ -30,12 +31,8 @@
   [x freq-table]
   [x (get freq-table x 0)])
 
-(defn multiply-and-add-to-total
-  [total [a b]]
-  (+ total (* a b)))
-
 (let [l1 (first input-lists)
       l2 (last input-lists)
       l2-frequencies (frequencies l2)
       appearances (mapv #(count-appearances % l2-frequencies) l1)]
-  (reduce multiply-and-add-to-total 0 appearances))
+  (reduce util/multiply-and-add-to-total 0 appearances))
