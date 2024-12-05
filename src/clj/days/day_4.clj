@@ -54,16 +54,17 @@ MXMXAXMASX")
 (defn p2
   [in]
   (->> in
-     string/split-lines
-     (map (partial partition 3 1))
-     (partition 3 1)
-     (map (partial apply (partial map (partial conj []))))
-     (mapcat identity)
-     (filter x-mas?)
-     count))
+       string/split-lines
+       (map (partial partition 3 1))
+       (partition 3 1)
+       (map (partial apply (partial map (partial conj []))))
+       (mapcat identity)
+       (filter x-mas?)
+       count))
 
-(p1 test-input)
-(p2 test-input)
+(comment
+  (p1 test-input)
+  (p2 test-input)
 
-(time (p1 input))
-(time (p2 input))
+  (time (p1 input))
+  (time (p2 input)))
