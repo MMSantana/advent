@@ -4,6 +4,10 @@
   [total [a b]]
   (+ total (* a b)))
 
-(defn split-long
-  [s]
-  (map parse-long (re-seq #"\d+" s)))
+(defn index-of [coll element]
+  (first (keep-indexed #(when (= element %2) %1) coll)))
+
+(defn insert-nth
+  [x n coll]
+  (let [split-vector (split-at n coll)]
+    (vec (concat (first split-vector) [x] (second split-vector)))))
